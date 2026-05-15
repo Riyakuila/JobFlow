@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 export default function JobForm({
   fetchJobs,
@@ -42,8 +43,10 @@ export default function JobForm({
         formData
       );
       setEditingJob(null);
+      toast.success("Job updated successfully");
     } else {
       await axios.post("/api/jobs", formData);
+      toast.success("Job added successfully");
     }
 
     setFormData({
@@ -60,6 +63,7 @@ export default function JobForm({
 
   } catch (error) {
     console.log(error);
+    toast.error("Error occurred while saving job");
   }
 };
 
@@ -130,7 +134,7 @@ export default function JobForm({
           name="appliedDate"
           value={formData.appliedDate}
           onChange={handleChange}
-          className="bg-zinc-800 p-3 rounded-lg outline-none"
+          className="bg-zinc-800 p-3 rounded-lg outline-none [color-scheme:dark]"
         />
 
       </div>

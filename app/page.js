@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
+import { Toaster, toast } from "react-hot-toast";
 import JobForm from "@/components/JobForm";
 import JobTable from "@/components/JobTable";
 
@@ -23,6 +24,7 @@ export default function Home() {
     try {
       await axios.delete(`/api/jobs/${id}`);
       fetchJobs();
+      toast.success("Job deleted successfully");
     } catch (error) {
       console.log(error);
     }
@@ -42,6 +44,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-black text-white p-8">
+      <Toaster position="top-right" />
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl font-bold mb-2">
           JobFlow
