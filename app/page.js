@@ -5,6 +5,7 @@ import axios from "axios";
 import { Toaster, toast } from "react-hot-toast";
 import JobForm from "@/components/JobForm";
 import JobTable from "@/components/JobTable";
+import DashboardCards from "@/components/DashboardCards";
 
 export default function Home() {
   const [jobs, setJobs] = useState([]);
@@ -53,6 +54,8 @@ export default function Home() {
         <p className="text-gray-400 mb-8">
           Track and manage your job applications
         </p>
+
+        <DashboardCards jobs={jobs} />
 
         <JobForm
           fetchJobs={fetchJobs}
