@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# JobFlow — Job Application Tracker
 
-## Getting Started
+JobFlow is a modern full-stack job application tracking dashboard built with Next.js, MongoDB, and Tailwind CSS. It helps users manage, organize, and track their job applications with a clean and responsive interface.
 
-First, run the development server:
+## Features
+
+- Create new job applications
+- View all applications dynamically
+- Update existing applications
+- Delete applications
+- Dashboard analytics cards
+- Real-time UI updates
+- Toast notifications
+- Responsive modern UI
+- Status-based colored badges
+
+## Tech Stack
+
+### Frontend
+- Next.js
+- React.js
+- Tailwind CSS
+- Axios
+- React Hot Toast
+
+### Backend
+- Next.js API Routes
+- MongoDB
+- Mongoose
+
+## Project Structure
+
+```bash
+app/
+ ├── api/
+ │    └── jobs/
+ │         ├── route.js
+ │         └── [id]/
+ │              └── route.js
+
+components/
+ ├── DashboardCards.jsx
+ ├── JobForm.jsx
+ └── JobTable.jsx
+
+lib/
+ └── mongodb.js
+
+models/
+ └── Job.js
+
+ ```
+
+ ## Installation
+
+### Clone the repository:
+
+```bash
+git clone https://github.com/Riyakuila/JobFlow.git
+```
+
+### Install dependencies:
+
+```bash
+npm install
+```
+
+### Create .env.local file:
+
+```bash
+MONGODB_URI=your_mongodb_connection_string
+```
+
+### Run development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Open:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash 
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## CRUD Operations
 
-## Learn More
+### Create
 
-To learn more about Next.js, take a look at the following resources:
+Add new job applications using the frontend form or API.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Read
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Fetch and display all applications dynamically from MongoDB.
 
-## Deploy on Vercel
+### Update
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Edit existing applications with auto-filled forms.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Delete
+
+Remove applications instantly with real-time UI updates.
+
+## API Routes
+
+### GET & POST
+```bash
+/api/jobs
+```
+
+### PUT & DELETE
+
+```bash
+/api/jobs/:id
+```
+
+## Status Types
+- Applied
+- Interview Scheduled
+- Rejected
+- Offer Received
+
+## Future Improvements
+- Authentication
+- Search & filters
+- Pagination
+- Dark/light theme toggle
+- Export applications
+- Interview reminders
+
+## Author
+
+Riya Kuila
